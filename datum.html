@@ -1,0 +1,3 @@
+{%- assign honapok = "január,február,március,április,május,június,július,augusztus,szeptember,október,november,december" | split: "," -%}
+{%- assign h = include.datum | date: "%-m" | minus: 1 -%}
+{{- include.datum | date: "%Y." }} {{ honapok[h] }} {{ include.datum | date: "%-d." -}}

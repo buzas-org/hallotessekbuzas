@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article>
+<h1>{{ page.title }}</h1>
+{%- if page.subtitle %}
+<p class="alcim">{{ page.subtitle }}</p>
+{%- endif %}
+<p class="datum">{% include datum.html datum=page.date %}</p>
+
+{{ content }}
+</article>
+
+<footer>
+{%- if page.original_url %}
+<p>Megjelent a Substackon is: <a href="{{ page.original_url }}">{{ page.original_url | remove: "https://" }}</a></p>
+{%- endif %}
+<p><a href="{{ '/' | relative_url }}">Vissza az írásokhoz</a></p>
+</footer>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'hu' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page.title and page.url != "/" %}
+<title>{{ page.title }} – {{ site.title }}</title>
+{%- else %}
+<title>{{ site.title }}</title>
+{%- endif %}
+<meta name="description" content="{{ page.subtitle | default: site.description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:description" content="{{ page.subtitle | default: site.description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:locale" content="hu_HU">
+{%- if page.cover_image %}
+<meta property="og:image" content="{{ page.cover_image }}">
+<meta property="og:type" content="article">
+{%- endif %}
+<style>
+  html { background: #fff; }
+  body {
+    margin: 0 auto;
+    max-width: 36em;
+    padding: 2.5em 1.25em 4em;
+    color: #111;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  a { color: inherit; }
+  header { margin-bottom: 3em; }
+  header a { text-decoration: none; }
+  h1 { font-size: 1.6em; line-height: 1.25; margin: 0 0 .3em; font-weight: normal; }
+  h2 { font-size: 1.2em; margin: 2em 0 .5em; }
+  h3 { font-size: 1em; margin: 1.5em 0 .5em; }
+  img { max-width: 100%; height: auto; display: block; }
+  blockquote { margin: 1.5em 0; padding-left: 1em; border-left: 2px solid #ccc; color: #333; }
+  hr { border: 0; border-top: 1px solid #ddd; margin: 2.5em 0; }
+  .alcim { color: #555; }
+  .datum { color: #777; font-size: .85em; }
+  .lista { list-style: none; padding: 0; }
+  .lista li { margin: 0 0 1.4em; }
+  .lista .datum { white-space: nowrap; margin-left: .4em; }
+  .footnotes { font-size: .9em; }
+  footer { margin-top: 4em; color: #777; font-size: .85em; }
+</style>
+</head>
+<body>
+<header><a href="{{ '/' | relative_url }}">{{ site.title }}</a></header>
+<main>
+{{ content }}
+</main>
+</body>
+</html>

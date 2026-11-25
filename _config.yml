@@ -1,0 +1,19 @@
+title: Búzás Balázs
+description: Búzás Balázs írásai
+lang: hu
+url: "https://hallotessekbuzas.hu"
+baseurl: ""
+timezone: Europe/Budapest
+
+markdown: kramdown
+permalink: /irasok/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md

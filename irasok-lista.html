@@ -1,0 +1,9 @@
+<ul class="lista">
+{%- for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="datum">{% include datum.html datum=post.date %}</span>
+    {%- if post.subtitle %}<br><span class="alcim">{{ post.subtitle }}</span>{% endif %}
+  </li>
+{%- endfor %}
+</ul>
